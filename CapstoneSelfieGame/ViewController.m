@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "GamesListTableViewDataSource.h"
 #import "GameDetailViewController.h"
+#import <Parse/Parse.h>
 
 static NSString * const rowSelectedSegue = @"rowSelected";
 
@@ -24,6 +25,13 @@ static NSString * const rowSelectedSegue = @"rowSelected";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"Rabbits"] = @"Key lime pie";
+    [testObject saveInBackground];
+    
+    self.title = @"Home";
+    
     self.dataSource = [GamesListTableViewDataSource new];
     
     self.gamesTableView.dataSource = self.dataSource;

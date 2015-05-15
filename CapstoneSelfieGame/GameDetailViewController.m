@@ -9,6 +9,7 @@
 #import "GameDetailViewController.h"
 
 static NSString * const photoCellIdentifier = @"cell";
+static NSString * const photoSelectedSegue = @"photoSelected";
 
 @interface GameDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -52,9 +53,19 @@ static NSString * const photoCellIdentifier = @"cell";
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:photoCellIdentifier];
     }
     
-    cell.textLabel.text = @"People's photos";
+    cell.textLabel.text = @"Person's photo";
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:photoSelectedSegue]) {
+        //        UITableViewCell *cell = sender;
+        //        NSIndexPath *indexPath = [self.gamesTableView indexPathForCell:cell];
+        //Get game from controller with index path
+        //        GameDetailViewController *detailViewController = segue.destinationViewController;
+        //        detailViewController. Use Game object
+    }
 }
 
 //- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
