@@ -7,6 +7,7 @@
 //
 
 #import "Game.h"
+#import <Parse/PFObject+Subclass.h>
 
 @implementation Game
 
@@ -14,9 +15,15 @@
 @dynamic gameCreator;
 @dynamic gameTimer;
 
-+ (NSString *)parseClassName
-{
++ (NSString *)parseClassName {
+    
     return @"Game";
+}
+
+
++ (void)load {
+    
+    [self registerSubclass];
 }
 
 @end

@@ -24,10 +24,9 @@
     
 //    self.gameNameTextField.text = Game Name Property;
     
-    
-    
-    // Do any additional setup after loading the view.
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

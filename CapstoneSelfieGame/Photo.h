@@ -14,4 +14,6 @@
 @property (nonatomic, strong) NSString *photoGame;
 @property (nonatomic, strong) NSString *photoParticipant;
 
++ (NSString *)parseClassName;
+
 @end

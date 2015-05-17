@@ -14,4 +14,6 @@
 @property (nonatomic, strong) NSString *gameCreator;
 @property (nonatomic, strong) NSNumber *gameTimer;
 
++ (NSString *)parseClassName;
+
 @end

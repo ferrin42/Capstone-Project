@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 #import "Game.h"
+#import "Photo.h"
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
 @interface AppDelegate ()
 
@@ -20,7 +22,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [Game registerSubclass];
     
     [Parse setApplicationId:@"Ri4fYNfhj2hliA8t03iiEIlSsNR0rGY7cvf93Pf4"
                   clientKey:@"0ClAJdAIW3B6EktqNRYdHlCYfNqr0YMtGj4ith24"];

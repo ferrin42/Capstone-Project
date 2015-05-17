@@ -7,6 +7,7 @@
 //
 
 #import "Photo.h"
+#import <Parse/PFObject+Subclass.h>
 
 @implementation Photo
 
@@ -17,6 +18,10 @@
 + (NSString *)parseClassName {
 
     return @"Photo";
+}
+
++ (void)load {
+    [self registerSubclass];
 }
 
 @end

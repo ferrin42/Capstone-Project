@@ -10,4 +10,18 @@
 
 @implementation GameController
 
++ (GameController *)sharedInstance {
+    static GameController *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[GameController alloc] init];
+        
+    });
+    return sharedInstance;
+}
+
+- (void)startNewGame {
+    
+}
+
 @end
