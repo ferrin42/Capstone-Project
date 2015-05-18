@@ -7,6 +7,7 @@
 //
 
 #import "GameController.h"
+#import "Game.h"
 
 @implementation GameController
 
@@ -20,8 +21,36 @@
     return sharedInstance;
 }
 
-- (void)startNewGame {
+-(void)loadGames:(void (^)(BOOL success))completion
+{
+    PFQuery *query = [Game query];
+//    PFACL *acl = [PFACL ACLWithUser:[PFUser currentUser]]; to use everytime you save a record
+    [query whereKey:@"gameName" containsString:@"currentUser"];
     
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        NSMutableArray * arrayToPullGames = [NSMutableArray new];
+        
+        for (Game *game in objects) {
+            [arrayToPullGames addObject:game];
+        }
+        
+        [GameController sharedInstance].games = [[NSArray alloc]initWithArray:arrayToPullGames];
+        completion(YES);
+        
+    }];
+    Game *game = [Game new];
+    [[GameController sharedInstance]saveGame:game withName:@"newGame"];
+}
+
+-(void)saveGame:(Game *)game withName:(NSString *)name
+{
+    NSDate *date = [NSDate date];
+    
+    
+    game.gameName = name;
+    game.gameTimer = date;
+    
+    [game saveInBackground];
 }
 
 @end

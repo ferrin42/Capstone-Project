@@ -7,10 +7,20 @@
 //
 
 #import "GamesListTableViewDataSource.h"
+#import "GameController.h"
 
 static NSString * const gameCellIdentifier = @"cell";
 
+
 @implementation GamesListTableViewDataSource
+
+
+-(void)registerTableView:(UITableView *)tableView
+{
+    [[GameController sharedInstance] loadGames:^(BOOL success) {
+        [tableView reloadData];
+    }];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 

@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+@import ParseUI;
+@import Parse;
 
 @interface GameController : NSObject
+
++ (GameController *)sharedInstance;
+
+@property (nonatomic,strong) NSArray * games;
+-(void)loadGames:(void (^)(BOOL success))completion;
 
 @end

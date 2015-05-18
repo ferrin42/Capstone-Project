@@ -13,7 +13,7 @@
 
 @dynamic photoFileObject;
 @dynamic photoGame;
-@dynamic photoParticipant;
+@dynamic photoUser;
 
 + (NSString *)parseClassName {
 
