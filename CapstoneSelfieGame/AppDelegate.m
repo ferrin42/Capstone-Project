@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Game.h"
-#import "Photo.h"
+#import "Participant.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 

@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@import Parse;
+@import ParseUI;
+
 @interface ParticipantController : NSObject
 
 @property (nonatomic, strong) NSArray *participants;
 
 + (ParticipantController *)sharedInstance;
+- (void)loadParticipants:(void (^)(BOOL success))completion;
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "ParticipantController.h"
+#import "Game.h"
+#import "Participant.h"
 
 @implementation ParticipantController
 
@@ -18,6 +20,23 @@
         
     });
     return sharedInstance;
+}
+
+- (void)loadParticipants:(void (^)(BOOL success))completion {
+ 
+    PFQuery *query = [Game query];
+//    [query this should query the game whose cell was selected
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        NSMutableArray *arrayToPullParticipants = [NSMutableArray new];
+        
+        for (Game *game in objects) {
+            [arrayToPullParticipants addObject:game.gameParticipants];
+        }
+        
+        [ParticipantController sharedInstance].participants = [[NSArray alloc] initWithArray:arrayToPullParticipants];
+        completion(YES);
+    }];
+    
 }
 
 @end

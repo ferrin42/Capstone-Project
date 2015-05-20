@@ -10,7 +10,7 @@
 
 @implementation Vote
 
-@dynamic votePhoto;
+@dynamic voteParticipant;
 
 + (NSString *)parseClassName {
     return @"Vote";

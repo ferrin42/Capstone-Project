@@ -7,8 +7,10 @@
 //
 
 #import "GameDetailViewController.h"
+#import "Participant.h"
+#import "ParticipantController.h"
 
-static NSString * const photoCellIdentifier = @"cell";
+static NSString * const participantCellIdentifier = @"cell";
 static NSString * const photoSelectedSegue = @"photoSelected";
 
 @interface GameDetailViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -42,22 +44,20 @@ static NSString * const photoSelectedSegue = @"photoSelected";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 15;
+    return [ParticipantController sharedInstance].participants.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:photoCellIdentifier];
-    
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:photoCellIdentifier];
-    }
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:participantCellIdentifier];
+//    if (!cell) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:photoCellIdentifier];
+//    }
+//    
 //    These cells should be populated with the names of the gameParticipants and their profile pictures
     
-    
-    
-    cell.textLabel.text = @"Person's photo";
+    Participant *participant = [ParticipantController sharedInstance].participants[indexPath.row];
+    cell.textLabel.text = participant.participantUser.username;
     
     return cell;
 }

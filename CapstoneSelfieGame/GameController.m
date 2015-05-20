@@ -22,7 +22,7 @@
     return sharedInstance;
 }
 
--(void)loadGames:(void (^)(BOOL success))completion
+- (void)loadGames:(void (^)(BOOL success))completion
 {
     PFQuery *query = [Participant query];
 //    PFACL *acl = [PFACL ACLWithUser:[PFUser currentUser]]; to use everytime you save a record

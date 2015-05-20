@@ -7,11 +7,11 @@
 //
 
 #import <Parse/Parse.h>
-#import "Photo.h"
+#import "Participant.h"
 
 @interface Vote : PFObject <PFSubclassing>
 
-@property (nonatomic, strong) Photo *votePhoto;
+@property (nonatomic, strong) Participant *voteParticipant;
 
 + (NSString *)parseClassName;
 
