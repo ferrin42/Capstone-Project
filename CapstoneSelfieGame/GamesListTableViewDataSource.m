@@ -24,14 +24,14 @@ static NSString * const gameCellIdentifier = @"cell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 5;
+    return [GameController sharedInstance].games.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:gameCellIdentifier];
-    
-    cell.textLabel.text = @"Games";
+    Game *game = [GameController sharedInstance].games[indexPath.row];
+    cell.textLabel.text = game.gameName;
     
     return cell;
 }

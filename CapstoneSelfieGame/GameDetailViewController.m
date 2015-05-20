@@ -53,6 +53,10 @@ static NSString * const photoSelectedSegue = @"photoSelected";
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:photoCellIdentifier];
     }
     
+//    These cells should be populated with the names of the gameParticipants and their profile pictures
+    
+    
+    
     cell.textLabel.text = @"Person's photo";
     
     return cell;

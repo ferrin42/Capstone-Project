@@ -8,6 +8,7 @@
 
 #import "GameController.h"
 #import "Game.h"
+#import "Participant.h"
 
 @implementation GameController
 
@@ -23,23 +24,26 @@
 
 -(void)loadGames:(void (^)(BOOL success))completion
 {
-    PFQuery *query = [Game query];
+    PFQuery *query = [Participant query];
 //    PFACL *acl = [PFACL ACLWithUser:[PFUser currentUser]]; to use everytime you save a record
-    [query whereKey:@"gameName" containsString:@"currentUser"];
+    [query whereKey:@"participantUser" equalTo:[PFUser currentUser]];
+    [query includeKey:@"participantGame"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         NSMutableArray * arrayToPullGames = [NSMutableArray new];
         
-        for (Game *game in objects) {
-            [arrayToPullGames addObject:game];
+        for (Participant *participant in objects) {
+            [arrayToPullGames addObject:participant.participantGame];
         }
         
         [GameController sharedInstance].games = [[NSArray alloc]initWithArray:arrayToPullGames];
         completion(YES);
         
     }];
-    Game *game = [Game new];
-    [[GameController sharedInstance]saveGame:game withName:@"newGame"];
+
+//    this shouldnt go here
+//    Game *game = [Game new];
+//    [[GameController sharedInstance]saveGame:game withName:@"newGame"];
 }
 
 -(void)saveGame:(Game *)game withName:(NSString *)name
@@ -49,6 +53,7 @@
     
     game.gameName = name;
     game.gameTimer = date;
+//    game.gameParticipants = this should be an array of PFUsers in the game
     
     [game saveInBackground];
 }

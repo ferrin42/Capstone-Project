@@ -14,8 +14,7 @@
 @dynamic gameName;
 @dynamic gameCreator;
 @dynamic gameTimer;
-@dynamic gamePhotoPointer;
-@dynamic participantsPointer;
+@dynamic gameParticipants;
 
 + (NSString *)parseClassName {
     

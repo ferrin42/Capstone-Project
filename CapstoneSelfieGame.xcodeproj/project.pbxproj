@@ -19,7 +19,6 @@
 		238926221B04325E005F94D3 /* FriendPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 238926211B04325E005F94D3 /* FriendPickerViewController.m */; };
 		238926261B043313005F94D3 /* GameDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 238926251B043313005F94D3 /* GameDetailViewController.m */; };
 		23A668AF1B04F594000A006F /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A668AE1B04F594000A006F /* PhotoViewController.m */; };
-		23A668B61B04F9EF000A006F /* PhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A668B51B04F9EF000A006F /* PhotoController.m */; };
 		23A668C11B057EB3000A006F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A668BB1B057EB3000A006F /* Bolts.framework */; };
 		23A668C21B057EB3000A006F /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A668BC1B057EB3000A006F /* ParseCrashReporting.framework */; };
 		23A668C31B057EB3000A006F /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A668BD1B057EB3000A006F /* ParseUI.framework */; };
@@ -39,10 +38,11 @@
 		23A668DD1B057F3C000A006F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A668DC1B057F3C000A006F /* libsqlite3.dylib */; };
 		23A668DF1B057F43000A006F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A668DE1B057F43000A006F /* Social.framework */; };
 		23A668E11B057F52000A006F /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A668E01B057F52000A006F /* Accounts.framework */; };
-		23A668E41B058212000A006F /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A668E31B058212000A006F /* Photo.m */; };
 		23A668E71B05914B000A006F /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A668E61B05914B000A006F /* Game.m */; };
 		23A668EA1B059178000A006F /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A668E91B059178000A006F /* GameController.m */; };
 		23A668F01B0AAC0F000A006F /* Vote.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A668EF1B0AAC0F000A006F /* Vote.m */; };
+		23A668F31B0C13AA000A006F /* ParticipantController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A668F21B0C13AA000A006F /* ParticipantController.m */; };
+		23A668F61B0C13E3000A006F /* Participant.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A668F51B0C13E3000A006F /* Participant.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,8 +79,6 @@
 		238926251B043313005F94D3 /* GameDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameDetailViewController.m; sourceTree = "<group>"; };
 		23A668AD1B04F594000A006F /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
 		23A668AE1B04F594000A006F /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
-		23A668B41B04F9EF000A006F /* PhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoController.h; sourceTree = "<group>"; };
-		23A668B51B04F9EF000A006F /* PhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoController.m; sourceTree = "<group>"; };
 		23A668BB1B057EB3000A006F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		23A668BC1B057EB3000A006F /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		23A668BD1B057EB3000A006F /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
@@ -100,14 +98,16 @@
 		23A668DC1B057F3C000A006F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		23A668DE1B057F43000A006F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		23A668E01B057F52000A006F /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		23A668E21B058212000A006F /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
-		23A668E31B058212000A006F /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		23A668E51B05914A000A006F /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		23A668E61B05914B000A006F /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		23A668E81B059178000A006F /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 		23A668E91B059178000A006F /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
 		23A668EE1B0AAC0F000A006F /* Vote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vote.h; sourceTree = "<group>"; };
 		23A668EF1B0AAC0F000A006F /* Vote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vote.m; sourceTree = "<group>"; };
+		23A668F11B0C13AA000A006F /* ParticipantController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticipantController.h; sourceTree = "<group>"; };
+		23A668F21B0C13AA000A006F /* ParticipantController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticipantController.m; sourceTree = "<group>"; };
+		23A668F41B0C13E3000A006F /* Participant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Participant.h; sourceTree = "<group>"; };
+		23A668F51B0C13E3000A006F /* Participant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Participant.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,10 +232,10 @@
 			children = (
 				23A668E51B05914A000A006F /* Game.h */,
 				23A668E61B05914B000A006F /* Game.m */,
-				23A668E21B058212000A006F /* Photo.h */,
-				23A668E31B058212000A006F /* Photo.m */,
 				23A668EE1B0AAC0F000A006F /* Vote.h */,
 				23A668EF1B0AAC0F000A006F /* Vote.m */,
+				23A668F41B0C13E3000A006F /* Participant.h */,
+				23A668F51B0C13E3000A006F /* Participant.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -243,10 +243,10 @@
 		23A668BA1B04FA16000A006F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				23A668B41B04F9EF000A006F /* PhotoController.h */,
-				23A668B51B04F9EF000A006F /* PhotoController.m */,
 				23A668E81B059178000A006F /* GameController.h */,
 				23A668E91B059178000A006F /* GameController.m */,
+				23A668F11B0C13AA000A006F /* ParticipantController.h */,
+				23A668F21B0C13AA000A006F /* ParticipantController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -378,16 +378,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				23A668F01B0AAC0F000A006F /* Vote.m in Sources */,
+				23A668F61B0C13E3000A006F /* Participant.m in Sources */,
 				2389261C1B04219C005F94D3 /* GamesListTableViewDataSource.m in Sources */,
 				23A668AF1B04F594000A006F /* PhotoViewController.m in Sources */,
 				2389261F1B0424F2005F94D3 /* TypeGameNameViewController.m in Sources */,
+				23A668F31B0C13AA000A006F /* ParticipantController.m in Sources */,
 				23A668E71B05914B000A006F /* Game.m in Sources */,
-				23A668B61B04F9EF000A006F /* PhotoController.m in Sources */,
 				23A668EA1B059178000A006F /* GameController.m in Sources */,
 				238926261B043313005F94D3 /* GameDetailViewController.m in Sources */,
 				238926221B04325E005F94D3 /* FriendPickerViewController.m in Sources */,
 				238925FD1B04190C005F94D3 /* ViewController.m in Sources */,
-				23A668E41B058212000A006F /* Photo.m in Sources */,
 				238925FA1B04190C005F94D3 /* AppDelegate.m in Sources */,
 				238925F71B04190C005F94D3 /* main.m in Sources */,
 			);

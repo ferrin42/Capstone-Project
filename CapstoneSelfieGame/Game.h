@@ -7,15 +7,15 @@
 //
 
 #import <Parse/Parse.h>
-#import "Photo.h"
+
+@class Photo;
 
 @interface Game : PFObject <PFSubclassing>
 
 @property (nonatomic, strong) NSString *gameName;
 @property (nonatomic, strong) NSString *gameCreator;
 @property (nonatomic, strong) NSDate *gameTimer;
-@property (nonatomic, strong) Photo *gamePhotoPointer;
-@property (nonatomic, strong) PFUser *participantsPointer;
+@property (nonatomic, strong) NSArray *gameParticipants;
 
 + (NSString *)parseClassName;
 
