@@ -18,7 +18,7 @@
 
 + (GameController *)sharedInstance;
 
--(void)loadGames:(void (^)(BOOL success))completion;
-//- (void)createNewGame:(Game *)game;
+- (void)loadGames:(void (^)(BOOL success))completion;
+- (void)createNewGame:(Game *)game completion:(void (^)(BOOL success))completion;
 
 @end

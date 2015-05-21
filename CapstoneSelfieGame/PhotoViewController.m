@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"Game name is %@", self.game.gameName);
     // Do any additional setup after loading the view.
 }
 

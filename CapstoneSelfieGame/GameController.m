@@ -9,6 +9,7 @@
 #import "GameController.h"
 #import "Game.h"
 #import "Participant.h"
+#import "TypeGameNameViewController.h"
 
 @implementation GameController
 
@@ -41,21 +42,22 @@
         
     }];
 
-//    this shouldnt go here
-//    Game *game = [Game new];
-//    [[GameController sharedInstance]saveGame:game withName:@"newGame"];
 }
 
--(void)saveGame:(Game *)game withName:(NSString *)name
-{
-    NSDate *date = [NSDate date];
+- (void)createNewGame:(Game *)game completion:(void (^)(BOOL success))completion {
     
+    if (!game) {
+        return;
+    }
     
-    game.gameName = name;
-    game.gameTimer = date;
-//    game.gameParticipants = this should be an array of PFUsers in the game
+    [game saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        completion(succeeded);
+    }];
     
-    [game saveInBackground];
+//    NSMutableArray *mutableGames = [[NSMutableArray alloc] initWithArray:self.games];
+//    [mutableGames addObject:game];
+//    
+//    self.games = mutableGames;
 }
 
 @end

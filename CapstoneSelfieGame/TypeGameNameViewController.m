@@ -7,10 +7,14 @@
 //
 
 #import "TypeGameNameViewController.h"
+#import "Game.h"
+#import "GameController.h"
+#import "PhotoViewController.h"
 
 @interface TypeGameNameViewController () <UITextFieldDelegate>
 
-@property (strong, nonatomic) IBOutlet UITextField *gameNameTextField;
+@property (strong, nonatomic) IBOutlet UIButton *takePhotoButton;
+@property (strong, nonatomic) Game *createdGame;
 
 @end
 
@@ -26,6 +30,22 @@
     
 }
 
+- (IBAction)takePhotoButtonTapped:(id)sender {
+    
+    Game *newGame = [Game new];
+    newGame.gameName = self.gameNameTextField.text;
+    newGame.gameCreator = [PFUser currentUser].email;
+    
+    [[GameController sharedInstance] createNewGame:newGame completion:^(BOOL succeeded) {
+        if (succeeded) {
+            // present next view controller
+            self.createdGame = newGame;
+            [self performSegueWithIdentifier:@"Photo" sender:nil];
+        } else {
+            // present error to user
+        }
+    }];
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -33,14 +53,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"Photo"]) {
+        PhotoViewController *photoController = (PhotoViewController *)segue.destinationViewController;
+        photoController.game = self.createdGame;
+    }
 }
-*/
+
 
 @end

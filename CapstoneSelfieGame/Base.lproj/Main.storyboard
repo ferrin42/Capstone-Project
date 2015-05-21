@@ -100,34 +100,91 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyj-qW-4SF">
+                                <rect key="frame" x="16" y="227" width="568" height="51"/>
+                                <color key="backgroundColor" red="0.22990895980000001" green="0.54499612890000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                                <state key="normal" title="TAKE PHOTO">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhotoButtonTapped:" destination="7qP-pZ-4Lz" eventType="touchUpInside" id="E23-aA-FVY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="81T-hD-Gqp" firstAttribute="leading" secondItem="0ka-Yz-qgo" secondAttribute="leadingMargin" id="2W2-V4-hRq"/>
+                            <constraint firstItem="kyj-qW-4SF" firstAttribute="leading" secondItem="81T-hD-Gqp" secondAttribute="leading" id="5LC-7e-6Iz"/>
                             <constraint firstItem="81T-hD-Gqp" firstAttribute="centerX" secondItem="8eL-bw-dlI" secondAttribute="centerX" id="7o3-it-MOz"/>
+                            <constraint firstItem="kyj-qW-4SF" firstAttribute="leading" secondItem="0ka-Yz-qgo" secondAttribute="leadingMargin" id="Flc-na-Ybh"/>
+                            <constraint firstItem="bPZ-AJ-nCV" firstAttribute="top" secondItem="kyj-qW-4SF" secondAttribute="bottom" constant="278" id="GwT-QM-1ol"/>
                             <constraint firstItem="8eL-bw-dlI" firstAttribute="top" secondItem="sYa-fM-lej" secondAttribute="bottom" constant="21" id="I1d-I0-9vx"/>
                             <constraint firstItem="81T-hD-Gqp" firstAttribute="top" secondItem="8eL-bw-dlI" secondAttribute="bottom" constant="34" id="Jek-jp-POy"/>
+                            <constraint firstItem="kyj-qW-4SF" firstAttribute="top" secondItem="81T-hD-Gqp" secondAttribute="bottom" constant="37" id="OUW-H8-akb"/>
+                            <constraint firstItem="bPZ-AJ-nCV" firstAttribute="top" secondItem="kyj-qW-4SF" secondAttribute="bottom" constant="278" id="TCw-2h-IX5"/>
                             <constraint firstItem="bPZ-AJ-nCV" firstAttribute="top" secondItem="81T-hD-Gqp" secondAttribute="bottom" constant="366" id="dbb-uA-9DG"/>
+                            <constraint firstItem="kyj-qW-4SF" firstAttribute="trailing" secondItem="0ka-Yz-qgo" secondAttribute="trailingMargin" id="gnx-ER-9uq"/>
                             <constraint firstItem="8eL-bw-dlI" firstAttribute="leading" secondItem="0ka-Yz-qgo" secondAttribute="leading" id="kaV-zN-wqt"/>
+                            <constraint firstItem="kyj-qW-4SF" firstAttribute="trailing" secondItem="81T-hD-Gqp" secondAttribute="trailing" id="oVp-rl-uCS"/>
+                            <constraint firstItem="kyj-qW-4SF" firstAttribute="top" secondItem="sYa-fM-lej" secondAttribute="bottom" constant="163" id="qio-Fw-xAm"/>
                             <constraint firstAttribute="trailing" secondItem="8eL-bw-dlI" secondAttribute="trailing" id="y4k-q5-zec"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Flc-na-Ybh"/>
+                                <exclude reference="gnx-ER-9uq"/>
+                                <exclude reference="qio-Fw-xAm"/>
+                                <exclude reference="TCw-2h-IX5"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="77w-uf-0PV">
-                        <barButtonItem key="rightBarButtonItem" title="Take selfie" id="gmI-4n-Cii">
-                            <connections>
-                                <segue destination="epA-H6-ix6" kind="show" id="D5O-jD-tgh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="77w-uf-0PV"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="gameNameTextField" destination="81T-hD-Gqp" id="CKT-Yn-a4W"/>
+                        <outlet property="takePhotoButton" destination="kyj-qW-4SF" id="jyn-ak-Fnf"/>
+                        <segue destination="bgj-Lm-lFM" kind="show" identifier="Photo" id="QWq-0k-dI6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upy-JH-feQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1817" y="200"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="FxY-Aw-m36">
+            <objects>
+                <viewController id="bgj-Lm-lFM" customClass="PhotoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UmA-dx-zwo"/>
+                        <viewControllerLayoutGuide type="bottom" id="9fP-Hm-Yvk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rsa-2G-1he">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHs-px-Fkn">
+                                <rect key="frame" x="517" y="511" width="32" height="30"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="epA-H6-ix6" kind="show" id="t8F-mC-Rml"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="hHs-px-Fkn" secondAttribute="trailing" constant="35" id="oY2-K5-tir"/>
+                            <constraint firstItem="9fP-Hm-Yvk" firstAttribute="top" secondItem="hHs-px-Fkn" secondAttribute="bottom" constant="15" id="u2A-aI-Nuz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FfM-r9-zdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2517" y="200"/>
         </scene>
         <!--Choose your opponents-->
         <scene sceneID="7wj-6y-WJ3">
@@ -151,14 +208,14 @@
                     <navigationItem key="navigationItem" title="Choose your opponents" id="4rU-ZC-Ar2">
                         <barButtonItem key="rightBarButtonItem" title="Go!" id="LfY-zz-v8Z">
                             <connections>
-                                <action selector="finishButtonTapped:" destination="epA-H6-ix6" id="myH-wf-Caw"/>
+                                <action selector="finishButtonTapped:" destination="epA-H6-ix6" id="YeJ-Bm-OZV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wqT-L3-6J8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2533" y="200"/>
+            <point key="canvasLocation" x="3231" y="200"/>
         </scene>
         <!--Best old man face-->
         <scene sceneID="lOG-RB-MXC">

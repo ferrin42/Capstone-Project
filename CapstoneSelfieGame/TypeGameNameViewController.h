@@ -10,4 +10,6 @@
 
 @interface TypeGameNameViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *gameNameTextField;
+
 @end
